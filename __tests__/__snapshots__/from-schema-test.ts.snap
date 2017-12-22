@@ -1518,14 +1518,18 @@ exports[`gql2ts deprecation removes deprecated fields if requested 1`] = `
     id: string;
     name: string | null;
     friends: Array<Character> | null;
-    appearsIn: Array<IEpisodeEnum> | null;
+    appearsIn: Array<Episode> | null;
     nonNullArr: Array<Character>;
     nonNullArrAndContents: Array<Character>;
     nullArrNonNullContents: Array<Character>;
 }
 
   
-  type IEpisodeEnum = 'NEWHOPE' | 'EMPIRE' | 'JEDI';
+  enum Episode {
+  NEWHOPE = 'NEWHOPE',
+EMPIRE = 'EMPIRE',
+JEDI = 'JEDI'
+};
 
   
   interface IHuman {
@@ -1533,7 +1537,7 @@ exports[`gql2ts deprecation removes deprecated fields if requested 1`] = `
     id: string;
     name: string | null;
     friends: Array<Character> | null;
-    appearsIn: Array<IEpisodeEnum> | null;
+    appearsIn: Array<Episode> | null;
     homePlanet: string | null;
     nonNullArr: Array<Character>;
     nonNullArrAndContents: Array<Character>;
@@ -1546,7 +1550,7 @@ exports[`gql2ts deprecation removes deprecated fields if requested 1`] = `
     id: string;
     name: string | null;
     friends: Array<Character> | null;
-    appearsIn: Array<IEpisodeEnum> | null;
+    appearsIn: Array<Episode> | null;
     primaryFunction: string | null;
     primaryFunctionNonNull: string;
     nonNullArr: Array<Character>;
@@ -2914,11 +2918,15 @@ exports[`gql2ts interfaces correctly translates enums 1`] = `
   
   interface IQuery {
     __typename: \\"Query\\";
-    colorEnum: IColorEnum | null;
+    colorEnum: Color | null;
 }
 
   
-  type IColorEnum = 'RED' | 'GREEN' | 'BLUE';"
+  enum Color {
+  RED = 'RED',
+GREEN = 'GREEN',
+BLUE = 'BLUE'
+};"
 `;
 
 exports[`gql2ts interfaces correctly translates the star wars schema into typescript defs 1`] = `
@@ -5958,11 +5966,15 @@ declare namespace GQL {
 
   interface IQuery {
     __typename: \\"Query\\";
-    colorEnum: IColorEnum | null;
+    colorEnum: Color | null;
   }
 
 
-  type IColorEnum = 'RED' | 'GREEN' | 'BLUE';
+  enum Color {
+    RED = 'RED',
+    GREEN = 'GREEN',
+    BLUE = 'BLUE'
+  };
 }
 
 // tslint:enable
