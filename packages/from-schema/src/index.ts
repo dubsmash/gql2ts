@@ -23,9 +23,9 @@ import {
   isEnum,
   isList,
   isNonNullable,
-} from '@gql2ts/util';
-import { IFromQueryOptions, ITypeMap } from '@gql2ts/types';
-import { DEFAULT_OPTIONS, DEFAULT_TYPE_MAP } from '@gql2ts/language-typescript';
+} from '@dubsmash/util';
+import { IFromQueryOptions, ITypeMap } from '@dubsmash/types';
+import { DEFAULT_OPTIONS, DEFAULT_TYPE_MAP } from '@dubsmash/language-typescript';
 
 const run: (schemaInput: GraphQLSchema, optionsInput: IInternalOptions) => string = (schemaInput, optionsInput) => {
   const {

@@ -24,7 +24,7 @@ import {
   isList,
   isNonNullable,
   isEnum,
-} from '@gql2ts/util';
+} from '@dubsmash/util';
 import {
   GetChildSelectionsType,
   IChildSelection,
@@ -36,11 +36,11 @@ import {
   ConvertToTypeSignature,
   ITypeMap,
   IFromQueryReturnValue,
-} from '@gql2ts/types';
+} from '@dubsmash/types';
 import {
   DEFAULT_TYPE_MAP,
   DEFAULT_OPTIONS,
-} from '@gql2ts/language-typescript';
+} from '@dubsmash/language-typescript';
 import {
   GenerateSubtypeCache,
   SubtypeNamerAndDedupe,

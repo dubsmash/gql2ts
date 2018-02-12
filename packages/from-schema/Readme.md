@@ -1,11 +1,11 @@
-# @gql2ts/from-schema
+# @dubsmash/from-schema
 
 This package is used to generate a namespace for a GraphQL Schema with all possible interfaces/types included.
 
 ## Basic Usage
 
 ```ts
-import { generateNamespace } from '@gql2ts/from-schema';
+import { generateNamespace } from '@dubsmash/from-schema';
 import { schema } from 'my-graphql-stuff';
 import * as fs from 'fs';
 
@@ -16,9 +16,9 @@ fs.writeFile('mySchema.d.ts', myNamespace);
 ## Advanced Usage
 
 ```ts
-import { generateNamespace, ISchemaToInterfaceOptions } from '@gql2ts/from-schema';
+import { generateNamespace, ISchemaToInterfaceOptions } from '@dubsmash/from-schema';
 import { schema } from 'my-graphql-stuff';
-import { IFromQueryOptions } from '@gql2ts/types';
+import { IFromQueryOptions } from '@dubsmash/types';
 import * as fs from 'fs';
 
 const options: Partial<ISchemaToInterfaceOptions> = {

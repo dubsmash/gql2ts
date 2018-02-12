@@ -7,10 +7,10 @@ import {
   writeToFile,
   PossibleSchemaInput,
   safeJSONParse,
-} from '@gql2ts/util';
-import { ISchemaToInterfaceOptions, generateNamespace } from '@gql2ts/from-schema';
-import fromQuery from '@gql2ts/from-query';
-import { IFromQueryReturnValue } from '@gql2ts/types';
+} from '@dubsmash/util';
+import { ISchemaToInterfaceOptions, generateNamespace } from '@dubsmash/from-schema';
+import fromQuery from '@dubsmash/from-query';
+import { IFromQueryReturnValue } from '@dubsmash/types';
 
 // tslint:disable-next-line no-require-imports no-var-requires
 const { version } = require('../package.json');

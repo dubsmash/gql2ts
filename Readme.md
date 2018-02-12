@@ -9,21 +9,21 @@
 
 ```shell
 # for CLI
-npm install -g gql2ts
+npm install -g @dubsmash/gql2ts
 
 # for programmatic use
-npm install @gql2ts/from-query
-npm install @gql2ts/from-schema
+npm install @dubsmash/from-query
+npm install @dubsmash/from-schema
 ```
 
 See the `packages` directory for package Readmes.
 
 ```sh
-packages/cli                  # gql2ts CLI
-packages/from-query           # @gql2ts/from-query
-packages/from-schema          # @gql2ts/from-schema
-packages/language-flow        # @gql2ts/language-flow
-packages/language-typescript  # @gql2ts/language-typescript
-packages/types                # @gql2ts/types
-packages/util                 # @gql2ts/util
+packages/cli                  # @dubsmash/gql2ts CLI
+packages/from-query           # @dubsmash/from-query
+packages/from-schema          # @dubsmash/from-schema
+packages/language-flow        # @dubsmash/language-flow
+packages/language-typescript  # @dubsmash/language-typescript
+packages/types                # @dubsmash/types
+packages/util                 # @dubsmash/util
 ```

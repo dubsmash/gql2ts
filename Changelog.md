@@ -6,7 +6,7 @@
 
 ## 1.4.0
 
-- Allow custom `TypeMap` in `@gql2ts/from-schema`, similar to `@gql2ts/from-query` [#109](https://github.com/avantcredit/gql2ts/pull/109)
+- Allow custom `TypeMap` in `@dubsmash/from-schema`, similar to `@dubsmash/from-query` [#109](https://github.com/avantcredit/gql2ts/pull/109)
 
 ## 1.3.0
 
@@ -48,7 +48,7 @@ interface IWhatever {
 
 ## 1.1.0 (botched)
 
-### @gql2ts/from-schema
+### @dubsmash/from-schema
 
 - Add option `ignoreTypeNameDeclaration` to not add `__typename` to all fields (thanks [@epicallan](https://github.com/epicallan)) [#72](https://github.com/avantcredit/gql2ts/pull/72)
 
@@ -62,14 +62,14 @@ interface IWhatever {
 
 ## 1.0.1
 
-- Fix `@gql2ts/from-schema` not handling Unions properly [#66](https://github.com/avantcredit/gql2ts/pull/66)
+- Fix `@dubsmash/from-schema` not handling Unions properly [#66](https://github.com/avantcredit/gql2ts/pull/66)
 
 ## 1.0.0
 
 - Use lerna to manage multiple packages
 - Rewrite in Typescript
-- Introduce `@gql2ts/from-query` which generates definitions from a schema and a query
-- Extract common code to `@gql2ts/util`
+- Introduce `@dubsmash/from-query` which generates definitions from a schema and a query
+- Extract common code to `@dubsmash/util`
 - Accept more objects from a schema
   - `{ data: IntrospectionQuery }`
   - `IntrospectionQuery`

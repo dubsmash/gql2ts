@@ -1,5 +1,5 @@
 {
-  "name": "gql2ts-base",
+  "name": "@dubsmash/gql2ts-base",
   "private": true,
   "version": "1.0.0",
   "description": "Convert GraphQL Schema to TypeScript defs",
@@ -28,7 +28,7 @@
   ],
   "author": "Brett Jurgens <brett.jurgens@avant.com> (https://www.avant.com)",
   "license": "MIT",
-  "repository": "avantcredit/gql2ts",
+  "repository": "dubsmash/gql2ts",
   "bin": {
     "gql2ts": "./index.js"
   },

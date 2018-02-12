@@ -1,11 +1,11 @@
-# @gql2ts/from-query
+# @dubsmash/from-query
 
 This package is used to generate types/interfaces from a GraphQL Schema and a query.
 
 ## Basic Usage
 
 ```ts
-import fromQuery from '@gql2ts/from-query';
+import fromQuery from '@dubsmash/from-query';
 import { schema, query } from 'my-graphql-stuff';
 import * as fs from 'fs';
 
@@ -19,7 +19,7 @@ fs.writeFile('definition.d.ts', allDefinitions);
 ## Advanced Usage
 
 ```ts
-import fromQuery from '@gql2ts/from-query';
+import fromQuery from '@dubsmash/from-query';
 import { schema, query } from 'my-graphql-stuff';
 // see `IOptions` in `types.ts` for options
 import * as options from './customFormatters';

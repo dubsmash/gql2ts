@@ -1,5 +1,5 @@
 {
-  "name": "@gql2ts/language-flow",
+  "name": "@dubsmash/language-flow",
   "private": false,
   "version": "1.4.1",
   "description": "flowtype defaults for gql2ts",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/avantcredit/gql2ts.git"
+    "url": "git+https://github.com/dubsmash/gql2ts.git"
   },
   "keywords": [
     "gql2ts",
@@ -26,14 +26,14 @@
   "author": "Brett Jurgens <brett.jurgens@avant.com> (https://www.avant.com)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/avantcredit/gql2ts/issues"
+    "url": "https://github.com/dubsmash/gql2ts/issues"
   },
-  "homepage": "https://github.com/avantcredit/gql2ts#readme",
+  "homepage": "https://github.com/dubsmash/gql2ts#readme",
   "dependencies": {
-    "@gql2ts/language-typescript": "^1.4.1",
-    "@gql2ts/util": "^1.3.0"
+    "@dubsmash/language-typescript": "^1.4.1",
+    "@dubsmash/util": "^1.3.0"
   },
   "devDependencies": {
-    "@gql2ts/types": "^1.3.0"
+    "@dubsmash/types": "^1.3.0"
   }
 }

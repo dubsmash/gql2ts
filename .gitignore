@@ -93,7 +93,6 @@ jspm_packages
 ### gql2ts test stuff ###
 # files i use to test output
 *.d.ts
-*.json
 
 ## remove js files
 packages/**/*.js
