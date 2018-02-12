@@ -98,4 +98,3 @@ jspm_packages
 packages/**/*.js
 packages/**/*.js.map
 packages/**/dist
-dist/
