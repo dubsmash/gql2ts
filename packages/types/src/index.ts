@@ -11,7 +11,7 @@ import {
   GraphQLEnumValue,
   FieldNode,
 } from 'graphql';
-import { PossibleSchemaInput } from '@dubsmash/util';
+import { PossibleSchemaInput } from '../../util/src';
 
 export type GetChildSelectionsType =
   (operation: OperationTypeNode, selection: SelectionNode, parent?: GraphQLType, isUndefined?: boolean)

@@ -24,7 +24,7 @@ import {
   isList,
   isNonNullable,
   isEnum,
-} from '@dubsmash/util';
+} from '../../util/src';
 import {
   GetChildSelectionsType,
   IChildSelection,
@@ -36,11 +36,11 @@ import {
   ConvertToTypeSignature,
   ITypeMap,
   IFromQueryReturnValue,
-} from '@dubsmash/types';
+} from '../../types/src';
 import {
   DEFAULT_TYPE_MAP,
   DEFAULT_OPTIONS,
-} from '@dubsmash/language-typescript';
+} from '../../language-typescript/src';
 import {
   GenerateSubtypeCache,
   SubtypeNamerAndDedupe,

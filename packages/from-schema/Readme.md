@@ -5,7 +5,7 @@ This package is used to generate a namespace for a GraphQL Schema with all possi
 ## Basic Usage
 
 ```ts
-import { generateNamespace } from '@dubsmash/from-schema';
+import { generateNamespace } from '../../from-schema/src';
 import { schema } from 'my-graphql-stuff';
 import * as fs from 'fs';
 
@@ -16,9 +16,9 @@ fs.writeFile('mySchema.d.ts', myNamespace);
 ## Advanced Usage
 
 ```ts
-import { generateNamespace, ISchemaToInterfaceOptions } from '@dubsmash/from-schema';
+import { generateNamespace, ISchemaToInterfaceOptions } from '../../from-schema/src';
 import { schema } from 'my-graphql-stuff';
-import { IFromQueryOptions } from '@dubsmash/types';
+import { IFromQueryOptions } from '../../types/src';
 import * as fs from 'fs';
 
 const options: Partial<ISchemaToInterfaceOptions> = {

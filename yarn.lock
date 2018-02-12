@@ -2,9 +2,19 @@
 # yarn lockfile v1
 
 
+"@types/commander@^2.3.31":
+  version "2.12.2"
+  resolved "https://registry.yarnpkg.com/@types/commander/-/commander-2.12.2.tgz#183041a23842d4281478fa5d23c5ca78e6fd08ae"
+  dependencies:
+    commander "*"
+
 "@types/graphql@^0.11.4":
   version "0.11.5"
   resolved "https://registry.yarnpkg.com/@types/graphql/-/graphql-0.11.5.tgz#e70f051e80b299be5b12f7e60d962f30c9596072"
+
+"@types/humps@^1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@types/humps/-/humps-1.1.2.tgz#fbcaf596d20ff2ed78f8f511c5d6a943b51101d6"
 
 "@types/jest@^21.1.2":
   version "21.1.2"
@@ -558,6 +568,10 @@ combined-stream@^1.0.5, combined-stream@~1.0.5:
 command-join@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/command-join/-/command-join-2.0.0.tgz#52e8b984f4872d952ff1bdc8b98397d27c7144cf"
+
+commander@*:
+  version "2.14.1"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-2.14.1.tgz#2235123e37af8ca3c65df45b026dbd357b01b9aa"
 
 commander@^2.9.0:
   version "2.9.0"
@@ -1359,6 +1373,10 @@ http-signature@~1.1.0:
     assert-plus "^0.2.0"
     jsprim "^1.2.2"
     sshpk "^1.7.0"
+
+humps@^2.0.0:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/humps/-/humps-2.0.1.tgz#dd02ea6081bd0568dc5d073184463957ba9ef9aa"
 
 iconv-lite@0.4.13:
   version "0.4.13"
@@ -3189,7 +3207,7 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
-"typescript@^2.4.1 <2.7.0":
+"typescript@^2.4.1 < 2.7.0":
   version "2.6.2"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.6.2.tgz#3c5b6fd7f6de0914269027f03c0946758f7673a4"
 

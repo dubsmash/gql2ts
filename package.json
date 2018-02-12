@@ -1,10 +1,13 @@
 {
-  "name": "@dubsmash/gql2ts-base",
+  "name": "@dubsmash/gql2ts",
   "private": true,
   "version": "1.0.0",
   "description": "Convert GraphQL Schema to TypeScript defs",
   "dependencies": {
-    "graphql": ">= 0.10 <0.12"
+    "graphql": ">= 0.10 <0.12",
+    "commander": "^2.9.0",
+    "humps": "^2.0.0",
+    "typescript": "^2.4.1 < 2.7.0"
   },
   "devDependencies": {
     "@types/graphql": "^0.11.4",
@@ -15,12 +18,15 @@
     "lerna": "2.3.1",
     "ts-jest": "^21.0.1",
     "tslint": "^5.5.0",
-    "typescript": "^2.4.1 <2.7.0"
+    "@types/commander": "^2.3.31",
+    "@types/humps": "^1.1.2"
   },
   "scripts": {
     "pretest": "lerna bootstrap --hoist graphql",
     "test": "jest --coverage",
-    "coverage": "cat ./coverage/lcov.info | coveralls"
+    "coverage": "cat ./coverage/lcov.info | coveralls",
+    "build": "tsc packages/cli/src/index.ts --outDir dist || true",
+    "prepublish": "npm run build"
   },
   "keywords": [
     "typescript",
@@ -30,7 +36,7 @@
   "license": "MIT",
   "repository": "dubsmash/gql2ts",
   "bin": {
-    "gql2ts": "./index.js"
+    "gql2ts": "./dist/cli/src/index.js"
   },
   "engines": {
     "node": ">=4.0.0"

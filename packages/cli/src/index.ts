@@ -7,16 +7,16 @@ import {
   writeToFile,
   PossibleSchemaInput,
   safeJSONParse,
-} from '@dubsmash/util';
-import { ISchemaToInterfaceOptions, generateNamespace } from '@dubsmash/from-schema';
-import fromQuery from '@dubsmash/from-query';
-import { IFromQueryReturnValue } from '@dubsmash/types';
+} from '../../util/src';
+import { ISchemaToInterfaceOptions, generateNamespace } from '../../from-schema/src';
+import fromQuery from '../../from-query/src';
+import { IFromQueryReturnValue } from '../../types/src';
 
 // tslint:disable-next-line no-require-imports no-var-requires
-const { version } = require('../package.json');
+// const { version } = require('../package.json');
 
 program
-  .version(version)
+  // .version(version)
   .usage('[options] <schema.json | schema.gql> <query.gql>')
   .option('-o --output-file [outputFile]', 'name for output file, will use stdout if not specified')
   .option('-n --namespace [namespace]', 'name for the namespace, defaults to "GQL"', 'GQL')

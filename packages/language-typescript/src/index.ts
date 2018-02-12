@@ -13,7 +13,7 @@ import {
   NamespaceGenerator,
   InterfaceNameWithExtensions,
   EnumTypeBuilder
-} from '@dubsmash/types';
+} from '../../types/src';
 import prettify from './typescriptPrettify';
 import { pascalize } from 'humps';
 

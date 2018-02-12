@@ -1,5 +1,5 @@
-import { IFromQueryOptions, WrapType } from '@dubsmash/types';
-import { DEFAULT_OPTIONS as TS_OPTIONS } from '@dubsmash/language-typescript';
+import { IFromQueryOptions, WrapType } from '../../types/src';
+import { DEFAULT_OPTIONS as TS_OPTIONS } from '../../language-typescript/src';
 
 export const FLOW_WRAP_PARTIAL: WrapType = partial => `$SHAPE<${partial}>`;
 export const FLOW_POST_PROCESSOR: WrapType = str => `/* @flow */

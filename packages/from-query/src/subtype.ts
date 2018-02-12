@@ -1,4 +1,4 @@
-import { GenerateSubTypeInterface } from '@dubsmash/types';
+import { GenerateSubTypeInterface } from '../../types/src';
 import { FieldNode } from 'graphql';
 
 export interface ISubtypeMetadata {
