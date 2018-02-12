@@ -70,18 +70,18 @@ const run: (schemaInput: GraphQLSchema, optionsInput: IInternalOptions) => strin
     return rootNamespaces.join(' | ');
   };
 
-  const generateRootTypes: (schema: GraphQLSchema) => string = schema => `  interface IGraphQLResponseRoot {
+  const generateRootTypes: (schema: GraphQLSchema) => string = schema => `  export interface GraphQLResponseRoot {
     data?: ${generateRootDataName(schema)};
-    errors?: Array<IGraphQLResponseError>;
+    errors?: Array<GraphQLResponseError>;
   }
 
-  interface IGraphQLResponseError {
+  export interface GraphQLResponseError {
     message: string;            // Required for all errors
-    locations?: Array<IGraphQLResponseErrorLocation>;
+    locations?: Array<GraphQLResponseErrorLocation>;
     [propName: string]: any;    // 7.2.2 says 'GraphQL servers may provide additional entries to error'
   }
 
-  interface IGraphQLResponseErrorLocation {
+  export interface GraphQLResponseErrorLocation {
     line: number;
     column: number;
   }`;
@@ -147,9 +147,7 @@ const run: (schemaInput: GraphQLSchema, optionsInput: IInternalOptions) => strin
     return wrapWithDescription(
       (enumTypeBuilder || typeBuilder)(
         generateEnumName(name),
-        addSemicolon(
-          formatEnum(enumValues)
-        )
+        formatEnum(enumValues)
       ),
       description
     );
@@ -220,7 +218,7 @@ const run: (schemaInput: GraphQLSchema, optionsInput: IInternalOptions) => strin
   ) => string | null;
 
   function isUnion (type: GraphQLNamedType): type is GraphQLUnionType {
-    return type instanceof GraphQLUnionType;
+    return type instanceof GraphQLUnionType || (!!(type as any)._types && (type as any)._types.length > 1);
   }
 
   type GenerateAbstractTypeDeclaration = (type: GraphQLAbstractType, ignoredTypes: Set<string>, interfaceMap: InterfaceMap) => string;
@@ -248,7 +246,8 @@ const run: (schemaInput: GraphQLSchema, optionsInput: IInternalOptions) => strin
     }
 
     let isInput: boolean = type instanceof GraphQLInputObjectType;
-    const f1: GraphQLInputFieldMap | GraphQLFieldMap<any, any> = type.getFields();
+    if (!type.getFields) console.dir(type);
+    const f1: GraphQLInputFieldMap | GraphQLFieldMap<any, any> = (type.getFields ? type.getFields() : {});
     let f: Array<GraphQLField<any, any> | GraphQLInputField> = Object.keys(f1).map(k => f1[k]);
 
     let fields: string[] = f

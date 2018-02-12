@@ -21,9 +21,9 @@ export const DEFAULT_INTERFACE_DECLARATION: InterfaceDeclarationGenerator = fiel
 ${fields.join('\n')}
 }`;
 
-export const DEFAULT_INTERFACE_BUILDER: InterfaceAndTypeBuilder = (name, body) => `interface ${name} ${body}`;
-export const DEFAULT_INTERFACE_NAMER: WrapType = name => `I${pascalize(name)}`;
-export const DEFAULT_TYPE_BUILDER: InterfaceAndTypeBuilder = (name, body) => `type ${name} = ${body}`;
+export const DEFAULT_INTERFACE_BUILDER: InterfaceAndTypeBuilder = (name, body) => `export interface ${name} ${body}`;
+export const DEFAULT_INTERFACE_NAMER: WrapType = name => `${pascalize(name)}`;
+export const DEFAULT_TYPE_BUILDER: InterfaceAndTypeBuilder = (name, body) => `export type ${name} = ${body}`;
 export const DEFAULT_TYPE_JOINER: TypeJoiner = types => types.join(' & ');
 export const DEFAULT_TYPE_NAMER: WrapType = name => name;
 
@@ -33,7 +33,7 @@ export const interfaceExtendListToString: (extensions: string[]) => string = ext
 };
 
 export const ADD_INTERFACE_EXTENSIONS: InterfaceNameWithExtensions = (opName, exts) => opName + interfaceExtendListToString(exts);
-export const DEFAULT_NAME_FRAGMENT: WrapType = name => `IFragment${pascalize(name)}`;
+export const DEFAULT_NAME_FRAGMENT: WrapType = name => `Fragment${pascalize(name)}`;
 export const DEFAULT_NAME_QUERY: QueryNamer = def => def.name ? pascalize(def.name.value) : 'Anonymous';
 
 export const DEFAULT_FORMAT_INPUT: InputFormatter = (name, isOptional, type) => ADD_SEMICOLON(`${name}${isOptional ? '?:' : ':' } ${type}`);
@@ -59,20 +59,20 @@ export const DEFAULT_ENUM_FORMATTER: EnumFormatter = values => `{
   ${values.map(({ value }) => `${value} = '${value}'`).join(',\n')}
 }`;
 
-export const DEFAULT_ENUM_TYPE_BUILDER: EnumTypeBuilder = (name, values) =>
-`enum ${name} ${values}`;
+export const DEFAULT_ENUM_TYPE_BUILDER: EnumTypeBuilder = (name, values) => `export enum ${name} ${values}`;
 
 export const DEFAULT_ENUM_NAME_GENERATOR: WrapType = name => `${pascalize(name)}`;
 export const DEFAULT_INPUT_NAME_GENERATOR: WrapType = name => `${pascalize(name)}Input`;
 export const DEFAULT_EXPORT_FUNCTION: WrapType = declaration => `export ${declaration}`;
 export const ADD_SEMICOLON: WrapType = str => `${str};`;
 
-export const DEFAULT_NAMESPACE_GENERATOR: NamespaceGenerator = (namespaceName, interfaces) => `// tslint:disable
-// graphql typescript definitions
+export const DEFAULT_NAMESPACE_GENERATOR: NamespaceGenerator = (namespaceName, interfaces) => `
+// tslint:disable
+// graphql typescript definitions (auto-generated)
 
-declare namespace ${namespaceName} {
+// declare namespace ${namespaceName} {
 ${interfaces}
-}
+// }
 
 // tslint:enable
 `;
