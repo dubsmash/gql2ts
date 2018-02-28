@@ -87,8 +87,8 @@ const run: (schemaInput: GraphQLSchema, optionsInput: IInternalOptions) => strin
   }`;
   type GenerateDescription = (description?: string, jsDoc?: IJSDocTag[]) => string;
   const generateDescription: GenerateDescription = (description, jsDoc = []) => (description || jsDoc.length) ? `/**
-    ${[description, ...jsDoc.map(({ tag, value }) => `@${tag} ${value}`)].filter(x => !!x).join('\n')}
-  */` : '';
+      ${[description, ...jsDoc.map(({ tag, value }) => `      @${tag} ${value}`)].filter(x => !!x).join('\n')}
+    */` : '';
 
   const wrapWithDescription: (declaration: string, description: string) => string = (declaration, description) =>
   `  ${generateDescription(description)}
@@ -105,9 +105,7 @@ const run: (schemaInput: GraphQLSchema, optionsInput: IInternalOptions) => strin
 
   const buildDocTags: (field: GraphQLField<any, any> | GraphQLInputField) => IJSDocTag[] = field => {
     const tags: IJSDocTag[] = [];
-    if (!field.astNode) {
-      return tags;
-    } else if (isInputField(field)) {
+    if (isInputField(field)) {
       if (field.defaultValue) {
         tags.push({ tag: 'default', value: field.defaultValue });
       }

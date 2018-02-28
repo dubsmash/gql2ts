@@ -36,10 +36,10 @@ var run = function (schemaInput, optionsInput) {
     var generateRootTypes = function (schema) { return "  export interface GraphQLResponseRoot {\n    data?: " + generateRootDataName(schema) + ";\n    errors?: Array<GraphQLResponseError>;\n  }\n\n  export interface GraphQLResponseError {\n    message: string;            // Required for all errors\n    locations?: Array<GraphQLResponseErrorLocation>;\n    [propName: string]: any;    // 7.2.2 says 'GraphQL servers may provide additional entries to error'\n  }\n\n  export interface GraphQLResponseErrorLocation {\n    line: number;\n    column: number;\n  }"; };
     var generateDescription = function (description, jsDoc) {
         if (jsDoc === void 0) { jsDoc = []; }
-        return (description || jsDoc.length) ? "/**\n    " + [description].concat(jsDoc.map(function (_a) {
+        return (description || jsDoc.length) ? "/**\n      " + [description].concat(jsDoc.map(function (_a) {
             var tag = _a.tag, value = _a.value;
-            return "@" + tag + " " + value;
-        })).filter(function (x) { return !!x; }).join('\n') + "\n  */" : '';
+            return "      @" + tag + " " + value;
+        })).filter(function (x) { return !!x; }).join('\n') + "\n    */" : '';
     };
     var wrapWithDescription = function (declaration, description) {
         return "  " + generateDescription(description) + "\n  " + declaration;
@@ -49,10 +49,7 @@ var run = function (schemaInput, optionsInput) {
     }
     var buildDocTags = function (field) {
         var tags = [];
-        if (!field.astNode) {
-            return tags;
-        }
-        else if (isInputField(field)) {
+        if (isInputField(field)) {
             if (field.defaultValue) {
                 tags.push({ tag: 'default', value: field.defaultValue });
             }
